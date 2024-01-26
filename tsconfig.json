@@ -23,14 +23,15 @@
       "@/*": [
         "src/*"
       ]
-    }
+    },
+    "noImplicitAny": false,
+    "allowJs": true
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
-  ],
+    "src/**/*.vue" ],
   "references": [
     {
       "path": "./tsconfig.node.json"

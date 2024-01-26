@@ -1,3 +1,4 @@
 src/airpower/assets
+src/view/map
 node_modules
 dist
