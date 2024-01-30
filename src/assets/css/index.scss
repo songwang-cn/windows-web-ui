@@ -1,2 +1,13 @@
 @import '../font/index.css';
 @import '../iconfont/iconfont.css';
+@import './animation.scss';
+@import './elementRewrite.scss';
+
+* {
+    font-family: 'AlimamaFangYuan';
+    letter-spacing: 1px;
+}
+
+iframe {
+    border: none;
+}

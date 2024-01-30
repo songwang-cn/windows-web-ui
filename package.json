@@ -6,12 +6,7 @@
     "scripts": {
         "s": "vite",
         "lint": "eslint --fix --ext .js --ext .ts --ext .vue ./",
-        "dev": "vite build --mode dev",
-        "test": "vite build --mode test",
-        "production": "vite build --mode production",
-        "l": "clear && git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit",
-        "c": "sh commit.sh",
-        "v": "vite preview"
+        "build": "vite build"
     },
     "dependencies": {
         "@element-plus/icons-vue": "^2.1.0",

@@ -1,5 +1,5 @@
-import { Ref } from 'vue'
 import { Router } from 'vue-router'
+import { AppConfigEntity } from './entity/AppConfigEntity'
 
 export class AppConfig {
   /**
@@ -20,5 +20,11 @@ export class AppConfig {
    */
   static columnAppNum = 8
 
-  static dragAppRef: any
+  /**
+   * ✨columnNum
+   * 桌面显示的列量
+   */
+  static columnNum = 16
+
+  static dragApp: AppConfigEntity = new AppConfigEntity()
 }

@@ -1,0 +1,18 @@
+.el-loading-mask {
+    background-color: rgba(0, 0, 0, .2);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.el-loading-spinner .circular {
+    display: none;
+}
+
+.el-loading-spinner {
+    background: url('../svg/loading.svg');
+    background-size: cover;
+    width: 120px;
+    height: 120px;
+}

@@ -11,7 +11,6 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
 import { UseTime } from '@/use/UseTime'
 
 const { HH, mm } = UseTime()

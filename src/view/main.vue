@@ -1,5 +1,9 @@
 <template>
-  <div class="main" :style="style">
+  <div
+    v-loading="loading"
+    class="main"
+    :style="style"
+  >
     <Header />
     <Desktop />
     <Footer />
@@ -7,14 +11,20 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 import { appStore } from '@/config/store'
 import Header from '@/components/Header.vue'
 import Desktop from '@/components/Desktop.vue'
 import Footer from '@/components/Footer.vue'
 
+const loading = ref(true)
+
+setTimeout(() => {
+  loading.value = false
+}, 1000)
+
 const style = computed(() => ({
-  background: `url(${appStore().bgUrl})`,
+  backgroundImage: `url(${appStore().bgUrl})`,
 }))
 
 </script>
@@ -27,6 +37,6 @@ const style = computed(() => ({
     background-size: cover;
     display: flex;
     flex-direction: column;
-    font-family: 'AlimamaFangYuan';
+
 }
 </style>
