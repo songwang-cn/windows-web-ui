@@ -27,6 +27,12 @@ const style = computed(() => ({
   backgroundImage: `url(${appStore().bgUrl})`,
 }))
 
+window.addEventListener('storage', (event) => {
+  if (event.key === 'bgUrl') {
+    appStore().setBgUrl(event.newValue as string)
+  }
+})
+
 </script>
 
 <style lang="scss" scoped>
