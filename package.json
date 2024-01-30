@@ -5,8 +5,8 @@
     "private": true,
     "scripts": {
         "s": "vite",
-        "lint": "eslint --fix --ext .js --ext .ts --ext .vue ./",
-        "build": "vite build"
+        "build": "vite build",
+        "lint": "eslint --fix --ext .js --ext .ts --ext .vue ./"
     },
     "dependencies": {
         "@element-plus/icons-vue": "^2.1.0",
