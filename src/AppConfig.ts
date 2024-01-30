@@ -12,19 +12,19 @@ export class AppConfig {
    * ✨appSize
    * 桌面app图标大小
    */
-  static appSize = 100
+  static appSize = 80
 
   /**
    * ✨columnAppNum
    * 桌面一列显示的app数量
    */
-  static columnAppNum = 8
+  static columnAppNum = 10
 
   /**
    * ✨columnNum
    * 桌面显示的列量
    */
-  static columnNum = 16
+  static columnNum = 18
 
   static dragApp: AppConfigEntity = new AppConfigEntity()
 }

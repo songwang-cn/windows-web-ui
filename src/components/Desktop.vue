@@ -143,7 +143,7 @@ function onMouseUp() {
         position: absolute;
         bottom: -5px;
         color: #fff;
-        font-size: 12px;
+        font-size: 10px;
       }
     }
 }

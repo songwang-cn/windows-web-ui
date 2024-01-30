@@ -2,7 +2,6 @@
   <div
     v-loading="loading"
     class="main"
-    :style="style"
   >
     <Header />
     <Desktop />
@@ -23,10 +22,6 @@ setTimeout(() => {
   loading.value = false
 }, 1000)
 
-const style = computed(() => ({
-  backgroundImage: `url(${appStore().bgUrl})`,
-}))
-
 window.addEventListener('storage', (event) => {
   if (event.key === 'bgUrl') {
     appStore().setBgUrl(event.newValue as string)
@@ -43,6 +38,8 @@ window.addEventListener('storage', (event) => {
     background-size: cover;
     display: flex;
     flex-direction: column;
+    background-image: url('../assets/img/wallPaper/1.png');
+    background-position: center center;
 
 }
 </style>

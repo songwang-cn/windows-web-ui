@@ -1,5 +1,5 @@
 <template>
-  <div v-loading="loading" class="login" :style="style">
+  <div v-loading="loading" class="login">
     <div class="mask" :style="maskStyle">
       <div v-if="opacity < 60" class="center">
         <div class="avatar">
@@ -35,14 +35,9 @@
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { appStore } from '@/config/store'
 import { AppConfig } from '@/appConfig'
 
 const loading = ref(false)
-
-const style = computed(() => ({
-  backgroundImage: `url(${appStore().bgUrl})`,
-}))
 
 const opacity = ref(100)
 
@@ -72,6 +67,8 @@ function onLogin() {
   position: fixed;
   inset: 0;
   background-size: cover;
+  background-image: url('../assets/img/wallPaper/1.png');
+  background-position: center center;
   .mask{
     position: absolute;
     inset: 0;
