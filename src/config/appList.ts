@@ -47,13 +47,6 @@ export const appList: AppConfigEntity[] = [
     icon: 'icon-kuaishou',
   },
   {
-    id: 8,
-    index: 8,
-    name: '网易云音乐',
-    icon: 'icon-wangyiyunyinle',
-    action: () => DialogHelper.show(Music),
-  },
-  {
     id: 9,
     index: 9,
     name: '百度网盘',
@@ -65,6 +58,13 @@ export const appList: AppConfigEntity[] = [
     name: '谷歌浏览器',
     icon: 'icon-Chrome',
     action: () => DialogHelper.show(Browser),
+  },
+  {
+    id: 8,
+    index: 8,
+    name: '网易云音乐',
+    icon: 'icon-wangyiyunyinle',
+    action: () => DialogHelper.show(Music),
   },
   {
     id: 11,
