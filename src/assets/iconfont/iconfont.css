@@ -1,9 +1,9 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3853517 */
-  src: url('iconfont.woff2?t=1706580577791') format('woff2'),
-       url('iconfont.woff?t=1706580577791') format('woff'),
-       url('iconfont.ttf?t=1706580577791') format('truetype'),
-       url('iconfont.svg?t=1706580577791#iconfont') format('svg');
+  src: url('iconfont.woff2?t=1706666169630') format('woff2'),
+       url('iconfont.woff?t=1706666169630') format('woff'),
+       url('iconfont.ttf?t=1706666169630') format('truetype'),
+       url('iconfont.svg?t=1706666169630#iconfont') format('svg');
 }
 
 .iconfont {
@@ -12,6 +12,34 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Edge-01:before {
+  content: "\e62e";
+}
+
+.icon-guanbi1:before {
+  content: "\e62c";
+}
+
+.icon-zuixiaohua1:before {
+  content: "\e62d";
+}
+
+.icon-shuaxin:before {
+  content: "\eafd";
+}
+
+.icon-arrow-left-line:before {
+  content: "\e651";
+}
+
+.icon-16gl-square:before {
+  content: "\ea8b";
+}
+
+.icon-xiaoxichuangkou-youshangjiao-suoxiaochuangkou:before {
+  content: "\e682";
 }
 
 .icon-guanji:before {

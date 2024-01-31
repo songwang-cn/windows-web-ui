@@ -6,6 +6,55 @@
   "description": "框架",
   "glyphs": [
     {
+      "icon_id": "16627017",
+      "name": "Edge",
+      "font_class": "Edge-01",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "5643512",
+      "name": "关闭",
+      "font_class": "guanbi1",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "6160694",
+      "name": "最小化",
+      "font_class": "zuixiaohua1",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "5387549",
+      "name": "刷新",
+      "font_class": "shuaxin",
+      "unicode": "eafd",
+      "unicode_decimal": 60157
+    },
+    {
+      "icon_id": "35084224",
+      "name": "箭头",
+      "font_class": "arrow-left-line",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "7594288",
+      "name": "16gl-square",
+      "font_class": "16gl-square",
+      "unicode": "ea8b",
+      "unicode_decimal": 60043
+    },
+    {
+      "icon_id": "17046885",
+      "name": "消息窗口-右上角-缩小窗口",
+      "font_class": "xiaoxichuangkou-youshangjiao-suoxiaochuangkou",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
       "icon_id": "34582156",
       "name": "关机",
       "font_class": "guanji",

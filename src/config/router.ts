@@ -10,6 +10,16 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/view/login.vue'),
   },
   {
+    path: '/shutDown',
+    name: '关机',
+    component: () => import('@/view/shutDown.vue'),
+  },
+  {
+    path: '/reload',
+    name: '关机',
+    component: () => import('@/view/reload.vue'),
+  },
+  {
     path: '/main',
     name: '主页面',
     component: () => import('@/view/main.vue'),

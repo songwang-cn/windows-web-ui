@@ -1,6 +1,7 @@
 <template>
   <Dialog
     ref="browser"
+    dialog-id="APP_1"
   >
     <template #left>
       <img src="@/assets/svg/edge.svg" style="height: 30px;width: 30px;">
@@ -13,21 +14,46 @@
           @click="showIndex = index"
         >
           <span>{{ bar.name }}</span>
-          <i class="iconfont icon-guanbi" @click.stop="onDeleteBar(index)" />
+          <i
+            class="iconfont icon-guanbi"
+            @click.stop="onDeleteBar(index)"
+          />
         </div>
-        <i class="add iconfont icon-add" @click="onAddBar" />
+        <i
+          class="add iconfont icon-add"
+          @click="onAddBar"
+        />
       </div>
     </template>
     <template
       v-for="bar,index of barList"
       :key="bar.name"
     >
-      <iframe
+      <div
         v-show="showIndex === index"
-        :src="bar.url"
-        width="100%"
-        height="100%"
-      />
+        class="frameBox"
+      >
+        <div class="top">
+          <i
+            class="iconfont icon-arrow-left-line"
+            @click="back"
+          />
+          <i
+            class="forward iconfont icon-arrow-left-line"
+            @click="goNext"
+          />
+          <i class="iconfont icon-shuaxin" @click="reload()" />
+          <el-input
+            v-model="bar.url"
+            style="flex: 1;margin-left: 10px;"
+            placeholder=""
+          />
+        </div>
+        <iframe
+          style="flex: 1;"
+          :src="bar.url"
+        />
+      </div>
     </template>
   </Dialog>
 </template>
@@ -43,7 +69,7 @@ const showIndex = ref(0)
 const barList = ref([
   {
     name: 'bing',
-    url: 'https://cn.bing.com/search?pc=%3CCNPA01%3E&q=%E7%99%BE%E5%BA%A6%E4%B8%80%E4%B8%8B',
+    url: 'https://cn.bing.com/search',
   },
 ])
 
@@ -62,6 +88,18 @@ function onDeleteBar(index: number) {
   }
 
   if (barList.value.length === 0) browser.value.closeHandler()
+}
+
+function back() {
+  window.history.back()
+}
+
+function goNext() {
+  window.history.forward()
+}
+
+function reload() {
+  window.location.reload()
 }
 
 </script>
@@ -126,6 +164,34 @@ function onDeleteBar(index: number) {
         background: #eee;
         border-radius: 100%;
       }
+    }
+  }
+}
+
+.frameBox{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .top{
+    min-height: 40px;
+    background: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+    .iconfont{
+      font-size: 20px;
+      padding: 5px;
+      border-radius: 100%;
+      &:hover{
+        background-color: #eee;
+      }
+    }
+
+    .forward{
+      transform: rotate(180deg);
     }
   }
 }

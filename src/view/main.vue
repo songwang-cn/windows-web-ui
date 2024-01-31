@@ -3,16 +3,14 @@
     v-loading="loading"
     class="main"
   >
-    <Header />
     <Desktop />
     <Footer />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { appStore } from '@/config/store'
-import Header from '@/components/Header.vue'
 import Desktop from '@/components/Desktop.vue'
 import Footer from '@/components/Footer.vue'
 
@@ -40,6 +38,6 @@ window.addEventListener('storage', (event) => {
     flex-direction: column;
     background-image: url('../assets/img/wallPaper/1.png');
     background-position: center center;
-
+    animation: fade-in 1s;
 }
 </style>

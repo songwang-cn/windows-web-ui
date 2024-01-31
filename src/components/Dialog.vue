@@ -1,7 +1,8 @@
 <template>
   <div
+    :id="dialogId"
     ref="main"
-    :class="`main ${dialogKey} ${isClosing ? 'closing' : 'opening'} ${isFullScreen && 'fullscreen'}`"
+    :class="`main ${dialogKey} ${isClosing ? 'closing' : 'opening'} ${isFullScreen && 'fullscreen'} ${isMini && 'mini'}`"
     :style="{
       backgroundColor: bgColor,
       color: appStore().theme === 'light' ? '#111' : '#fff',
@@ -24,9 +25,9 @@
         <slot name="title" />
       </div>
       <div class="right">
-        <i v-if="miniable" class="mini iconfont icon-zuixiaohua" @click.self="closeHandler()" />
-        <i v-if="fullable" class="full iconfont icon-a-screen_full_macquanping" @click.self="onFullScreen()" />
-        <i class="iconfont close icon-macguanbi" @click.self="closeHandler()" />
+        <i v-if="miniable" class="mini iconfont icon-zuixiaohua1" @click.self="isMini = true" />
+        <i v-if="fullable" :class="`full iconfont ${isFullScreen ? 'icon-xiaoxichuangkou-youshangjiao-suoxiaochuangkou' : 'icon-16gl-square'}`" @click.self="onFullScreen()" />
+        <i class="iconfont close icon-guanbi1" @click.self="closeHandler()" />
       </div>
     </div>
     <div class="dialog_body">
@@ -51,6 +52,10 @@ import { ref, onMounted } from 'vue'
 import { appStore } from '@/config/store'
 
 const props = defineProps({
+  dialogId: {
+    type: String,
+    default: '',
+  },
   title: {
     type: String,
     default: '弹窗标题',
@@ -122,7 +127,7 @@ function closeHandler() {
   isClosing.value = true
   setTimeout(() => {
     props.onClose()
-  }, 1000)
+  }, 200)
 }
 
 defineExpose({
@@ -184,6 +189,8 @@ const isDraging = ref(false)
 
 const isFullScreen = ref(false)
 
+const isMini = ref(false)
+
 /**
  * 四周吸附效果的临界值，小于这个值就吸附
  */
@@ -236,10 +243,27 @@ function onMouseMove(e: MouseEvent) {
         flex-direction: column;
         overflow: hidden;
         box-shadow: 0 0 30px #494949;
+        font-variant: normal;
 
         &.fullscreen{
             border-radius: 0;
             transition: 500ms;
+        }
+
+        &.mini{
+          transform: scale(0);
+          animation: mini 500ms ease-in-out;
+        }
+
+        @keyframes mini {
+          0%{
+            transform: scale(1);
+            opacity: 1;
+          }
+          100%{
+            transform: scale(0);
+            opacity: 0
+          }
         }
         .dialog_top{
             user-select: none;
@@ -262,12 +286,11 @@ function onMouseMove(e: MouseEvent) {
                     width: 40px;
                     line-height: 40px;
                     text-align: center;
-                    color: #777;
-                    font-size: 18px;
+                    color: #666;
+                    font-size: 14px;
                     display: inline-block;
                     cursor: default;
                     transition: 200ms;
-                    cursor: pointer;
                     &:hover{
                       background: #eee;
 
@@ -309,7 +332,7 @@ function onMouseMove(e: MouseEvent) {
 }
 
 .closing{
-    animation: dialog-out forwards 300ms ease-in-out;
+    animation: dialog-out forwards 200ms ease-in-out;
 }
 
 </style>

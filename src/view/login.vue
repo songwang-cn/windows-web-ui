@@ -16,13 +16,13 @@
         </div>
       </div>
       <div class="footer">
-        <div class="btn">
+        <div class="btn" @click="shutDown">
           <i class="iconfont icon-guanji" />
           <div class="text">
             关机
           </div>
         </div>
-        <div class="btn">
+        <div class="btn" @click="reload">
           <i class="iconfont icon-zhongqi" />
           <div class="text">
             重启
@@ -60,6 +60,14 @@ function onLogin() {
   }, 3000)
 }
 
+function shutDown() {
+  AppConfig.router?.push('./shutDown')
+}
+
+function reload() {
+  AppConfig.router?.push('./reload')
+}
+
 </script>
 
 <style lang="scss" scoped>
@@ -82,7 +90,7 @@ function onLogin() {
       display: flex;
       flex-direction: column;
       align-items: center;
-      animation: dialog-in 800ms ease-in forwards;
+      animation: dialog-in 800ms ease-in-out;
 
       .avatar{
         width: 100px;

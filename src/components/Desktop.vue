@@ -63,7 +63,7 @@ function onMouseMove(e: MouseEvent) {
     isDraging.value = true
   }
   const x = e.x > AppConfig.appSize / 2 ? e.x - AppConfig.appSize / 2 : 0
-  const y = e.y - 40 > AppConfig.appSize / 2 ? e.y - 40 - AppConfig.appSize / 2 : 0
+  const y = e.y > AppConfig.appSize / 2 ? e.y - AppConfig.appSize / 2 : 0
   dragPos.value.setX(x).setY(y)
 }
 
@@ -94,7 +94,7 @@ function onItemMove(config: AppConfigEntity, index: number) {
 }
 
 function onClick() {
-  appStore().dragApp.action && appStore().dragApp.action()
+  appStore().dragApp.onAction()
 }
 
 function onMouseUp() {
@@ -129,9 +129,7 @@ function onMouseUp() {
         z-index: 999;
         transition: none;
         pointer-events: none;
-        .icon{
-          box-shadow: 0 0 20px #7e7e7e;
-        }
+
       }
 
       .icon{

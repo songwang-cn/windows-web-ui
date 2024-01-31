@@ -31,7 +31,7 @@ export class DialogHelper {
         },
         onClose: () => {
           unmount()
-          reject()
+          resolve('close')
         },
       })
 

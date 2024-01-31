@@ -19,6 +19,7 @@ export const appStore = defineStore('app', {
     lastBgUrl: localStorage.getItem('lastBgUrl') || new URL('@/assets/img/wallPaper/1.png', import.meta.url).href,
     appList: getAppListFromStorage(),
     dragApp: new AppConfigEntity(),
+    openAppPool: [] as AppConfigEntity[],
   }),
   actions: {
     changeBgType(type: BgType) {
@@ -54,6 +55,16 @@ export const appStore = defineStore('app', {
     },
     setDragApp(config: AppConfigEntity) {
       this.dragApp = config
+    },
+
+    onAppAction(app: AppConfigEntity) {
+      if (!this.openAppPool.find((v) => v.id === app.id)) {
+        this.openAppPool.push(app)
+      }
+    },
+
+    onAppClose(appId: number) {
+      this.openAppPool = this.openAppPool.filter((item) => item.id !== appId)
     },
   },
 })

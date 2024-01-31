@@ -1,11 +1,11 @@
 <template>
   <Dialog
     ref="browser"
+    dialog-id="APP_2"
     dheight="80%"
     dwidth="400px"
     bg-color="#111"
     :fullable="false"
-    :miniable="false"
   >
     <iframe
       src="https://song-wang.gitee.io/music-player/#/"
