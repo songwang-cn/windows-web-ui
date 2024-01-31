@@ -10,14 +10,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/view/login.vue'),
   },
   {
+    path: '/reload',
+    name: '重启',
+    component: () => import('@/view/reload.vue'),
+  },
+  {
     path: '/shutDown',
     name: '关机',
     component: () => import('@/view/shutDown.vue'),
-  },
-  {
-    path: '/reload',
-    name: '关机',
-    component: () => import('@/view/reload.vue'),
   },
   {
     path: '/main',
