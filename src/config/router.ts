@@ -24,6 +24,11 @@ const routes: Array<RouteRecordRaw> = [
     name: '主页面',
     component: () => import('@/view/main.vue'),
   },
+  {
+    path: '/photoWall',
+    name: '照片墙',
+    component: () => import('@/view/photoWall.vue'),
+  },
 ]
 
 // 创建路由
