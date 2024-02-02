@@ -11,6 +11,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: 'docs', // github pages部署时只能指定 docs 目录而非 dist
     minify: 'terser',
     terserOptions: {
       // eslint-disable-next-line camelcase

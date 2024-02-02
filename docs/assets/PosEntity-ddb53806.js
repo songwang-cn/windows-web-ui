@@ -1,0 +1,1 @@
+var t=Object.defineProperty,__publicField=(e,s,r)=>(((e,s,r)=>{s in e?t(e,s,{enumerable:!0,configurable:!0,writable:!0,value:r}):e[s]=r})(e,"symbol"!=typeof s?s+"":s,r),r);class PosEntity{constructor(){__publicField(this,"x",0),__publicField(this,"y",0)}setX(t){return this.x=t,this}setY(t){return this.y=t,this}}export{PosEntity as P};

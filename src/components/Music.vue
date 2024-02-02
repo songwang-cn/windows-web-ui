@@ -8,7 +8,7 @@
     :fullable="false"
   >
     <iframe
-      src="https://songwang-cn.gitee.io/music-player/#/"
+      src="https://songwang-cn.github.io/music-player/#/"
       width="100%"
       height="100%"
     />
